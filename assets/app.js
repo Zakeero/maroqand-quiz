@@ -75,10 +75,10 @@ const items=CONFIG.gallery.length?CONFIG.gallery.map(g=>({cls:g.cls||"",cap:g.ca
 const esc=t=>String(t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 items.forEach(it=>{
   const el=document.createElement(it.src&&!it.video?"button":"div"); el.className="gal reveal "+it.cls;
-  if(it.video){el.innerHTML=`<video muted loop playsinline preload="none" poster="${it.poster||""}" data-src="${it.src}" aria-label="${esc(it.cap)}"></video><span class="live">● Jonli</span>`}
+  if(it.video){el.innerHTML=`<video muted loop playsinline preload="none" poster="${it.poster||""}" data-src="${it.src}" aria-label="${esc(it.cap)}"></video><span class="live" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10.5 22 7v10l-6-3.5"/></svg></span>`}
   else if(it.src){el.type="button";el.setAttribute("aria-label",`Kattalashtirish: ${it.cap}`);el.innerHTML=`<img src="${it.src}" alt="${esc(it.cap)}" loading="lazy" decoding="async">`;el.addEventListener("click",()=>openLb(it.src,it.cap))}
   else el.innerHTML=`<div class="ph" aria-hidden="true">?</div>`;
-  if(it.cap){const c=document.createElement("span");c.className="cap";c.textContent=it.cap;el.appendChild(c)}
+  if(it.cap&&!it.src){const c=document.createElement("span");c.className="cap";c.textContent=it.cap;el.appendChild(c)}
   gal.appendChild(el);
 });
 /* video faqat ko'ringanda yuklanadi va o'ynaydi */
