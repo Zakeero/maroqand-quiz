@@ -6,7 +6,7 @@
 <title>Maroqand Quiz — Samarqanddagi intellektual o‘yin</title>
 <meta name="description" content="Har seshanba Samarqandda jamoaviy quiz: rebuslar, rasmli savollar, kino va musiqa raundlari, sovrinlar. Jamoangiz bilan ro‘yxatdan o‘ting.">
 <meta property="og:title" content="Maroqand Quiz — har seshanba yangi o‘yin">
-<meta property="og:description" content="Jamoangiz bilan keling: rebuslar, kino, musiqa, sovrinlar va baraban.">
+<meta property="og:description" content="Jamoangiz bilan keling: rebuslar, kino, musiqa, sovrinlar va lototron.">
 <meta property="og:image" content="https://maroqandquiz.vercel.app/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Unbounded:wght@700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css?v=10">
+<link rel="stylesheet" href="/assets/style.css?v=11">
 </head>
 <body>
 
@@ -39,7 +39,7 @@
   <div class="wrap hero-grid">
     <div>
       <span class="pill"><span class="dot"></span>Har seshanba — yangi o‘yin</span>
-      <h1>Samarqanddagi eng <span class="gold">kuchli</span> quiz</h1>
+      <h1>Samarqanddagi eng <span class="gold">maroqli</span> quiz</h1>
       <p class="lead">Do‘stlaringizni yig‘ing, jamoa bo‘lib keling va aql, tezlik hamda emotsiyalar to‘la kechani o‘tkazing. Rebuslar, rasmli savollar, kino va musiqa raundlari — zerikishga vaqt qolmaydi.</p>
       <div class="ctas">
         <a class="btn btn-gold" href="#royxat">Jamoani ro‘yxatdan o‘tkazish
@@ -76,12 +76,12 @@
   <div class="wrap">
     <span class="eyebrow">Qanday o‘ynaladi</span>
     <h2>4 qadam — va siz o‘yindasiz</h2>
-    <p class="lead">Aqlli bo‘lish shart emas. Kino ko‘rgan, musiqa tinglagan va do‘stlari bilan kulishni yaxshi ko‘radigan har kim uchun joy bor.</p>
+    <p class="lead">Aqlli bo‘lish shart emas. Kino ko‘rgan, musiqa tinglagan va do‘stlar bilan mazmunli vaqt o‘tkazishni istaganlar uchun joy bor.</p>
     <div class="steps">
       <div class="step reveal"><h3>Jamoa yig‘ing</h3><p>10 kishigacha bo‘lgan jamoa tuzing: do‘stlar, hamkasblar yoki kursdoshlar. Jamoaga qiziqarli nom o‘ylab toping.</p></div>
       <div class="step reveal"><h3>Joy band qiling</h3><p>Saytdagi forma orqali 1 daqiqada ro‘yxatdan o‘ting. Biz siz bilan bog‘lanib, joyni tasdiqlaymiz.</p></div>
       <div class="step reveal"><h3>Keling va o‘ynang</h3><p>Seshanba kuni kechqurun bir necha raund: savollarga jamoa bo‘lib javob topasiz, ballar jadvalda yuritiladi.</p></div>
-      <div class="step reveal"><h3>Sovrinlarni oling</h3><p>G‘oliblar, “Ekvator”, “Zato shohsupadami” va baraban orqali tanlanadigan 10 nafar omadli ishtirokchi.</p></div>
+      <div class="step reveal"><h3>Sovrinlarni oling</h3><p>G‘oliblar, “Ekvator”, “Zato shohsupadamiz” va lototron orqali tanlanadigan 10 nafar omadli ishtirokchi.</p></div>
     </div>
   </div>
 </section>
@@ -129,16 +129,16 @@
           <div><div class="nm">Top-3 jamoa</div><p>Eng ko‘p ball to‘plagan uch jamoa sovrin va shohsupada suratga tushish huquqini oladi.</p></div>
         </div>
         <div class="prize reveal"><div class="nm">“Ekvator”</div><p>Jadvalning aynan o‘rtasidagi jamoa uchun. Oltin o‘rtalik ham g‘alaba!</p></div>
-        <div class="prize fun reveal"><div class="nm">“Zato shohsupadami”</div><p>Oxiridan ikkinchi o‘rindagi jamoa ham shohsupaga chiqadi. Ha, jiddiy.</p></div>
+        <div class="prize fun reveal"><div class="nm">“Zato shohsupadamiz”</div><p>Oxiridan ikkinchi o‘rindagi jamoa ham shohsupaga chiqadi. Ha, jiddiy.</p></div>
       </div>
       <div class="wheel-card reveal">
-        <div class="nm">Omad barabani</div>
-        <p class="wheel-txt">Har o‘yinda baraban 10 nafar ishtirokchini tasodifiy tanlaydi — ularni shirinlik kutadi. Omadingizni sinab ko‘ring:</p>
+        <div class="nm">Lototron</div>
+        <p class="wheel-txt">Har o‘yinda lototron 10 nafar ishtirokchini tasodifiy tanlaydi — ularni shirinlik kutadi. Omadingizni sinab ko‘ring:</p>
         <div class="wheel-box">
           <div class="pin" aria-hidden="true"></div>
           <div class="wheel" id="wheel" aria-hidden="true"></div>
         </div>
-        <button class="btn btn-gold" id="spin">Barabanni aylantirish</button>
+        <button class="btn btn-gold" id="spin">Lototronni aylantirish</button>
         <div class="wheel-res" id="wheelRes" aria-live="polite"></div>
       </div>
     </div>
@@ -250,7 +250,7 @@
       <details><summary>Ishtirok narxi qancha?</summary><p id="faqPrice">Kishi boshiga 50 000 so‘m.</p></details>
       <details><summary>O‘yin qayerda va qachon bo‘ladi?</summary><p id="faqWhere"></p></details>
       <details><summary>Jamoam yo‘q bo‘lsa-chi?</summary><p>Telegram yoki Instagram Direct orqali bizga yozing — vaziyatingizga qarab variantini birga topamiz.</p></details>
-      <details><summary>Sovrinlar qanday?</summary><p>Top-3 jamoa, jadval o‘rtasidagi “Ekvator” va oxiridan ikkinchi o‘rindagi “Zato shohsupadami” jamoalari taqdirlanadi. Bundan tashqari baraban orqali 10 nafar ishtirokchi tasodifiy tanlanib, shirinlik bilan mukofotlanadi.</p></details>
+      <details><summary>Sovrinlar qanday?</summary><p>Top-3 jamoa, jadval o‘rtasidagi “Ekvator” va oxiridan ikkinchi o‘rindagi “Zato shohsupadamiz” jamoalari taqdirlanadi. Bundan tashqari lototron orqali 10 nafar ishtirokchi tasodifiy tanlanib, shirinlik bilan mukofotlanadi.</p></details>
     </div>
   </div>
 </section>
@@ -282,6 +282,6 @@
 
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Rasmni kattalashtirib ko‘rish"><button class="lb-x" id="lbX" aria-label="Yopish">&times;</button><img id="lbImg" alt=""><p id="lbCap"></p></div>
 
-<script src="/assets/app.js?v=10"></script>
+<script src="/assets/app.js?v=11"></script>
 </body>
 </html>

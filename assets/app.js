@@ -66,7 +66,7 @@ function tick(){
 tick(); const cdTimer=setInterval(()=>{ if(!$("cd-s")) return clearInterval(cdTimer); tick(); },1000);
 
 /* gallery */
-const PH=[["big","G‘alaba lahzasi"],["","Javob e’lon qilinganda"],["","Musiqa raundi"],["wide","“Zato shohsupadami” taqdirlanishi"],["","Baraban aylanmoqda"],["","Jamoa kengashi"],["wide","Shohsupadagi g‘oliblar"]];
+const PH=[["big","G‘alaba lahzasi"],["","Javob e’lon qilinganda"],["","Musiqa raundi"],["wide","“Zato shohsupadamiz” taqdirlanishi"],["","Lototron aylanmoqda"],["","Jamoa kengashi"],["wide","Shohsupadagi g‘oliblar"]];
 const gal=$("gallery");
 const items=CONFIG.gallery.length?CONFIG.gallery.map(g=>({cls:g.cls||"",cap:g.cap||"",src:g.src,video:g.video,poster:g.poster})):PH.map(([cls,cap])=>({cls,cap}));
 const esc=t=>String(t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
