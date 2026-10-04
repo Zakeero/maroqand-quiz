@@ -315,4 +315,7 @@ button.gal{border:0;font:inherit;color:inherit;text-align:left;cursor:zoom-in}
 .gal .live svg{width:20px;height:20px}
 
 /* o'rta kenglikda bosh qism bir ustunga o'tadi, sana kartasi siqilmaydi */
-@media(max-width:1020px){.hero .hero-grid{grid-template-columns:1fr}.hero .next{max-width:520px}}
+.hero .hero-grid{grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr)}
+.hero h1{font-size:clamp(36px,5vw,68px)}
+.final{position:relative}
+@media(max-width:1100px){.hero .hero-grid{grid-template-columns:1fr}.hero .next{max-width:520px}}
