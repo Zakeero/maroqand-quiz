@@ -59,7 +59,7 @@ for(let i=2;i<=10;i++){const o=document.createElement("option");o.value=i;o.text
 
 function tick(){
   const now=Date.now(); let t=games[0]; let ms=t-now;
-  if(ms<=0){ $("countdown").innerHTML='<div style="grid-column:1/-1;font:700 20px var(--head);color:var(--gold);padding:14px">O‘yin hozir davom etmoqda!</div>'; return; }
+  if(ms<=0){ const fl0=$("finalLeft");if(fl0)fl0.textContent="O‘yin hozir davom etmoqda!"; $("countdown").innerHTML='<div style="grid-column:1/-1;font:700 20px var(--head);color:var(--gold);padding:14px">O‘yin hozir davom etmoqda!</div>'; return; }
   const d=Math.floor(ms/864e5),h=Math.floor(ms/36e5)%24,m=Math.floor(ms/6e4)%60,s=Math.floor(ms/1e3)%60;
   $("cd-d").textContent=d;const fl=$("finalLeft");if(fl)fl.textContent=`${d} kun ${h} soat ${m} daqiqa qoldi`;$("cd-h").textContent=String(h).padStart(2,"0");$("cd-m").textContent=String(m).padStart(2,"0");$("cd-s").textContent=String(s).padStart(2,"0");
 }
