@@ -332,3 +332,5 @@ button.gal{border:0;font:inherit;color:inherit;text-align:left;cursor:zoom-in}
 .next::before{opacity:.07}
 @media(max-width:860px){.band-navy::before{opacity:.1}.next::before{opacity:.09}}
 @media(max-width:700px){.stats{grid-template-columns:1fr;gap:8px}.stat{display:flex;align-items:baseline;gap:12px;padding:14px 18px}.stat b{font-size:24px;white-space:nowrap}.stat span{font-size:15px}}
+@media(max-width:1100px){.hero .hero-grid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){.hero h1{font-size:min(36px,8.4vw)}}
