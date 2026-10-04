@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maroqand Quiz — Samarqanddagi intellektual o‘yin</title>
+<meta name="description" content="Har seshanba Samarqandda jamoaviy quiz: rebuslar, rasmli savollar, kino va musiqa raundlari, sovrinlar. Jamoangiz bilan ro‘yxatdan o‘ting.">
+<meta property="og:title" content="Maroqand Quiz — har seshanba yangi o‘yin">
+<meta property="og:description" content="Jamoangiz bilan keling: rebuslar, kino, musiqa, sovrinlar va baraban.">
+<meta property="og:image" content="https://maroqandquiz.vercel.app/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="/assets/logo.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Unbounded:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css?v=5">
+</head>
+<body>
+
+<nav class="nav" aria-label="Asosiy menyu">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="/assets/logo.webp" alt="" width="40" height="40">Maroqand Quiz</a>
+    <ul>
+      <li><a href="#qanday">Qanday o‘ynaladi</a></li>
+      <li><a href="#raundlar">Raundlar</a></li>
+      <li><a href="#sovrinlar">Sovrinlar</a></li>
+      <li><a href="#emotsiyalar">Emotsiyalar</a></li>
+      <li><a href="#savollar">Savollar</a></li>
+    </ul>
+    <a class="btn btn-gold" href="#royxat">Ro‘yxatdan o‘tish</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill"><span class="dot"></span>Har seshanba — yangi o‘yin</span>
+      <h1>Samarqanddagi eng <span class="gold">kuchli</span> quiz</h1>
+      <p class="lead">Do‘stlaringizni yig‘ing, jamoa bo‘lib keling va aql, tezlik hamda emotsiyalar to‘la kechani o‘tkazing. Rebuslar, rasmli savollar, kino va musiqa raundlari — zerikishga vaqt qolmaydi.</p>
+      <div class="ctas">
+        <a class="btn btn-gold" href="#royxat">Jamoani ro‘yxatdan o‘tkazish
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="#qanday">Bu qanday o‘yin?</a>
+      </div>
+    </div>
+    <aside class="next" aria-label="Keyingi o‘yin">
+      <div class="label">Keyingi o‘yin</div>
+      <div class="date" id="nextDate">Seshanba</div>
+      <div class="time" id="nextTime"></div>
+      <div class="countdown" id="countdown" aria-live="off">
+        <div><b id="cd-d">0</b><span>kun</span></div>
+        <div><b id="cd-h">0</b><span>soat</span></div>
+        <div><b id="cd-m">0</b><span>daqiqa</span></div>
+        <div><b id="cd-s">0</b><span>soniya</span></div>
+      </div>
+      <a class="btn btn-gold" href="#royxat" style="width:100%">Joy band qilish</a>
+      <div class="meta" style="margin-top:18px">
+        <span>Joy: <b id="venueShort"></b></span>
+        <span>Sig‘im: <b id="capacity"></b></span>
+      </div>
+    </aside>
+  </div>
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat reveal"><b>20+</b><span>o‘tkazilgan o‘yin</span></div>
+      <div class="stat reveal"><b id="stTeams">15–18</b><span>jamoa sig‘adi</span></div>
+      <div class="stat reveal"><b>4–5</b><span>kishilik jamoalar</span></div>
+      <div class="stat reveal"><b id="stPrice">50 000</b><span>so‘m / kishi</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="qanday" class="band band-cream">
+  <div class="wrap">
+    <span class="eyebrow">Qanday o‘ynaladi</span>
+    <h2>4 qadam — va siz o‘yindasiz</h2>
+    <p class="lead">Aqlli bo‘lish shart emas. Kino ko‘rgan, musiqa tinglagan va do‘stlari bilan kulishni yaxshi ko‘radigan har kim uchun joy bor.</p>
+    <div class="steps">
+      <div class="step reveal"><h3>Jamoa yig‘ing</h3><p>4–5 kishilik jamoa tuzing: do‘stlar, hamkasblar yoki kursdoshlar. Jamoaga qiziqarli nom o‘ylab toping.</p></div>
+      <div class="step reveal"><h3>Joy band qiling</h3><p>Saytdagi forma orqali 1 daqiqada ro‘yxatdan o‘ting. Biz siz bilan bog‘lanib, joyni tasdiqlaymiz.</p></div>
+      <div class="step reveal"><h3>Keling va o‘ynang</h3><p>Seshanba kuni kechqurun bir necha raund: savollarga jamoa bo‘lib javob topasiz, ballar jadvalda yuritiladi.</p></div>
+      <div class="step reveal"><h3>Sovrinlarni oling</h3><p>G‘oliblar, “Ekvator”, “Zato shohsupadami” va baraban orqali tanlanadigan 10 nafar omadli ishtirokchi.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="raundlar">
+  <div class="wrap">
+    <span class="eyebrow">Raundlar</span>
+    <h2>Intellektual va <span class="coral">emotsional</span></h2>
+    <p class="lead">Har o‘yin turli raundlardan iborat: bilim ham, sezgi ham, jamoaviy ruh ham kerak bo‘ladi.</p>
+    <div class="rounds">
+      <div class="round reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 9h4M7 13h4M15 9l1.5 1.5L19 8"/></svg>
+        <span class="tag int">Intellektual</span><h3>Variantli savollar</h3><p>To‘rt variantdan to‘g‘risini toping — bilim va mantiq sinovi.</p></div>
+      <div class="round reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>
+        <span class="tag int">Intellektual</span><h3>Rasmli savollar</h3><p>Kadr, joy yoki shaxsni rasmga qarab aniqlang.</p></div>
+      <div class="round reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h3a2 2 0 1 1 4 0h3v3a2 2 0 1 1 0 4v3h-3a2 2 0 1 0-4 0H4v-3a2 2 0 1 0 0-4z"/><path d="M17 4h3v3"/></svg>
+        <span class="tag int">Intellektual</span><h3>Rebuslar</h3><p>Harflar, rasmlar va belgilardan yashirin so‘zni yeching.</p></div>
+      <div class="round emo reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18M7 6l2 4M12 6l2 4M17 6l2 4"/></svg>
+        <span class="tag emo">Emotsional</span><h3>Kino raundi</h3><p>Sevimli filmlaringizni kadr va sahnalardan taniy olasizmi?</p></div>
+      <div class="round emo reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>
+        <span class="tag emo">Emotsional</span><h3>Musiqa raundi</h3><p>Bir necha soniyalik parchadan qo‘shiqni toping va birga kuylang.</p></div>
+    </div>
+
+    <div class="try reveal" id="sinab">
+      <div>
+        <span class="eyebrow" style="color:var(--gold)">Sinab ko‘ring</span>
+        <h3>Yecha olasizmi?</h3>
+        <p class="sub">O‘yindagi kabi 3 ta savol. To‘g‘ri topsangiz — seshanba kuni sizni kutamiz.</p>
+      </div>
+      <div>
+        <div class="qcount" id="qcount"></div>
+        <div class="qtext" id="qtext"></div>
+        <div class="opts" id="opts"></div>
+        <div class="qfb" id="qfb" aria-live="polite"></div>
+        <button class="btn btn-gold qnext" id="qnext" hidden>Keyingi savol</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sovrinlar" class="band band-navy">
+  <div class="wrap">
+    <span class="eyebrow">Sovrinlar va nominatsiyalar</span>
+    <h2>Bu yerda faqat g‘oliblar yutmaydi</h2>
+    <p class="lead">Jadvalning tepasi ham, o‘rtasi ham, hatto pastrog‘i ham — har bir o‘ringa o‘z mukofoti bor.</p>
+    <div class="prizes">
+      <div class="prize-grid">
+        <div class="prize top reveal">
+          <div class="podium" aria-hidden="true">
+            <i style="height:52px;background:#B9BDD3">2</i><i style="height:72px;background:var(--gold)">1</i><i style="height:40px;background:#d98b4b">3</i>
+          </div>
+          <div><div class="nm">Top-3 jamoa</div><p>Eng ko‘p ball to‘plagan uch jamoa sovrin va shohsupada suratga tushish huquqini oladi.</p></div>
+        </div>
+        <div class="prize reveal"><div class="nm">“Ekvator”</div><p>Jadvalning aynan o‘rtasidagi jamoa uchun. Oltin o‘rtalik ham g‘alaba!</p></div>
+        <div class="prize fun reveal"><div class="nm">“Zato shohsupadami”</div><p>Oxiridan ikkinchi o‘rindagi jamoa ham shohsupaga chiqadi. Ha, jiddiy.</p></div>
+      </div>
+      <div class="wheel-card reveal">
+        <div class="nm">Omad barabani</div>
+        <p class="wheel-txt">Har o‘yinda baraban 10 nafar ishtirokchini tasodifiy tanlaydi — ularni shirinlik kutadi. Omadingizni sinab ko‘ring:</p>
+        <div class="wheel-box">
+          <div class="pin" aria-hidden="true"></div>
+          <div class="wheel" id="wheel" aria-hidden="true"></div>
+        </div>
+        <button class="btn btn-gold" id="spin">Barabanni aylantirish</button>
+        <div class="wheel-res" id="wheelRes" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="emotsiyalar">
+  <div class="wrap">
+    <span class="eyebrow">Emotsiyalar</span>
+    <h2>Seshanba kechalari shunday o‘tadi</h2>
+    <p class="lead">Hayajon, kulgi, “voy, bilardim-ku!” lahzalari va g‘alaba qichqirig‘i. Ko‘proq kadrlar — Instagram sahifamizda.</p>
+    <div class="gallery" id="gallery"></div>
+    <div style="margin-top:36px"><a class="btn btn-ghost" href="https://instagram.com/maroqandquiz" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+      @maroqandquiz</a></div>
+  </div>
+</section>
+
+<section class="corp-sec">
+  <div class="wrap">
+    <div class="corp reveal">
+      <div>
+        <span class="eyebrow" style="color:var(--gold)">Korporativ o‘yinlar</span>
+        <h2>Jamoangiz uchun alohida quiz</h2>
+        <p style="opacity:.92;max-width:560px">Ofis, bank yoki o‘quv markazi jamoasi uchun maxsus o‘yin tashkil qilamiz — team building, bayram yoki shunchaki yaxshi kecha uchun.</p>
+        <ul><li>Savollar sizning soha va kompaniyangiz mavzusida</li><li>Boshlovchi, jadval va sovrinlar — hammasi bizdan</li><li>Bir necha bo‘lim o‘rtasida musobaqa</li></ul>
+      </div>
+      <div><a class="btn btn-gold" href="https://t.me/maroqAndquiz" target="_blank" rel="noopener">Korporativ o‘yin so‘rash</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="royxat" class="band band-cream">
+  <div class="wrap reg">
+    <div class="reg-info">
+      <span class="eyebrow">Ro‘yxatdan o‘tish</span>
+      <h2>Jamoangiz uchun joy band qiling</h2>
+      <p class="lead">Zal <span id="capText">15–18</span> jamoaga mo‘ljallangan — joylar tugashidan oldin ulguring.</p>
+      <div class="price"><span id="priceText">50 000</span> <small>so‘m / kishi boshiga</small></div>
+      <ul>
+        <li>📅 <span>Har <b>seshanba</b>, <b id="timeText"></b></span></li>
+        <li>📍 <span id="venueText"></span></li>
+        <li>👥 <span>Jamoada odatda <b>4–5 kishi</b></span></li>
+        <li>✈️ <span>E’lonlar: <a href="https://t.me/maroqAndquiz" target="_blank" rel="noopener">t.me/maroqAndquiz</a></span></li>
+      </ul>
+    </div>
+
+    <form id="regForm" novalidate>
+      <div class="field full" id="f-team">
+        <label for="team">Jamoa nomi</label>
+        <input id="team" name="team" maxlength="60" placeholder="Masalan: Registon ruhlari" autocomplete="off">
+        <div class="emsg"></div>
+      </div>
+      <div class="field" id="f-captain">
+        <label for="captain">Sardor ismi</label>
+        <input id="captain" name="captain" maxlength="60" placeholder="Ismingiz" autocomplete="name">
+        <div class="emsg"></div>
+      </div>
+      <div class="field" id="f-phone">
+        <label for="phone">Telefon raqam</label>
+        <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="+998 90 123 45 67" autocomplete="tel">
+        <div class="emsg"></div>
+      </div>
+      <div class="field" id="f-players">
+        <label for="players">Ishtirokchilar soni</label>
+        <select id="players" name="players"></select>
+        <div class="emsg"></div>
+      </div>
+      <div class="field" id="f-date">
+        <label for="date">O‘yin sanasi</label>
+        <select id="date" name="date"></select>
+        <div class="emsg"></div>
+      </div>
+      <div class="field full">
+        <label for="telegram">Telegram username <span class="opt-l">(ixtiyoriy)</span></label>
+        <input id="telegram" name="telegram" maxlength="40" placeholder="@username" autocomplete="off">
+      </div>
+      <div class="field full">
+        <span style="font-weight:600;font-size:14px" id="srcLabel">Biz haqimizda qayerdan eshitdingiz?</span>
+        <div class="chips" role="radiogroup" aria-labelledby="srcLabel">
+          <input type="radio" name="source" id="s1" value="Instagram"><label for="s1">Instagram</label>
+          <input type="radio" name="source" id="s2" value="Telegram"><label for="s2">Telegram</label>
+          <input type="radio" name="source" id="s3" value="Do‘stlar orqali"><label for="s3">Do‘stlar orqali</label>
+          <input type="radio" name="source" id="s4" value="Boshqa"><label for="s4">Boshqa</label>
+        </div>
+      </div>
+      <div class="field full">
+        <label class="check"><input type="checkbox" name="first" value="yes"> Birinchi marta qatnashyapmiz</label>
+      </div>
+      <div class="field full">
+        <label for="note">Izoh <span class="opt-l">(ixtiyoriy)</span></label>
+        <textarea id="note" name="note" maxlength="300" placeholder="Savol yoki istaklaringiz"></textarea>
+      </div>
+      <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="form-err" id="formErr" hidden></div>
+      <button class="btn btn-gold" type="submit" id="submitBtn">Joyni band qilish</button>
+      <p class="form-note">Yuborganingizdan so‘ng tashkilotchilarimiz siz bilan bog‘lanib, joyni tasdiqlaydi.</p>
+    </form>
+  </div>
+</section>
+
+<section id="savollar">
+  <div class="wrap">
+    <span class="eyebrow">Ko‘p beriladigan savollar</span>
+    <h2>Savollaringiz bormi?</h2>
+    <div class="faq">
+      <details><summary>Juda bilimdon bo‘lishim shartmi?</summary><p>Yo‘q. Savollar turli mavzularda: kino, musiqa, rasmlar va rebuslar ham bor. Jamoada har kim o‘z kuchli tomonini topadi — asosiysi, yaxshi kayfiyat.</p></details>
+      <details><summary>Jamoada necha kishi bo‘ladi?</summary><p>Odatda 4–5 kishi. Kamroq yoki ko‘proq bo‘lsangiz, ro‘yxatdan o‘tishda sonini ko‘rsating — tashkilotchilar siz bilan kelishib oladi.</p></details>
+      <details><summary>Ishtirok narxi qancha?</summary><p id="faqPrice">Kishi boshiga 50 000 so‘m.</p></details>
+      <details><summary>O‘yin qayerda va qachon bo‘ladi?</summary><p id="faqWhere"></p></details>
+      <details><summary>Jamoam yo‘q bo‘lsa-chi?</summary><p>Telegram yoki Instagram Direct orqali bizga yozing — vaziyatingizga qarab variantini birga topamiz.</p></details>
+      <details><summary>Sovrinlar qanday?</summary><p>Top-3 jamoa, jadval o‘rtasidagi “Ekvator” va oxiridan ikkinchi o‘rindagi “Zato shohsupadami” jamoalari taqdirlanadi. Bundan tashqari baraban orqali 10 nafar ishtirokchi tasodifiy tanlanib, shirinlik bilan mukofotlanadi.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final band-navy" aria-label="Keyingi o‘yinga taklif">
+  <div class="wrap final-in">
+    <span class="eyebrow">Keyingi o‘yin</span>
+    <h2 class="final-h reveal">Seshanba kuni <span>ko‘rishamiz!</span></h2>
+    <p class="final-date reveal"><b id="finalDate"></b><span id="finalLeft"></span></p>
+    <div class="final-ctas reveal">
+      <a class="btn btn-gold" href="#royxat">Jamoani ro‘yxatdan o‘tkazish</a>
+      <a class="btn btn-light" href="https://t.me/maroqAndquiz" target="_blank" rel="noopener">Telegram kanal</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div style="display:flex;align-items:center;gap:12px"><img src="/assets/logo.webp" alt="Maroqand Quiz logotipi" width="44" height="44"><div><b style="color:var(--navy)">Maroqand Quiz</b><br>Samarqand · Intellektual o‘yin</div></div>
+    <div class="soc">
+      <a href="https://instagram.com/maroqandquiz" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+      <a href="https://t.me/maroqAndquiz" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M21 4L3 11l6 2.5M21 4l-3 16-9-6.5M21 4L9 13.5V19l3-3.5"/></svg></a>
+    </div>
+    <div>© <span id="yr"></span> Maroqand Quiz</div>
+  </div>
+</footer>
+
+<a class="btn btn-gold mobile-cta" id="mobileCta" href="#royxat">Joy band qilish</a>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Rasmni kattalashtirib ko‘rish"><button class="lb-x" id="lbX" aria-label="Yopish">&times;</button><img id="lbImg" alt=""><p id="lbCap"></p></div>
+
+<script src="/assets/app.js?v=5"></script>
+</body>
+</html>
