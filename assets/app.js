@@ -6,6 +6,8 @@ const CONFIG = {
   venueShort: "Samarqand",  // qisqa joy nomi (restoran nomi)
   venueFull: "Manzil ro‘yxatdan o‘tgach yuboriladi", // to'liq manzil
   price: "50 000",
+  // Qoldirilgan o'yinlar (YYYY-MM-DD). Bu sanalar saytda ko'rsatilmaydi, keyingi seshanba chiqadi.
+  skip: ["2026-10-06"],
   // Galereya: src — fayl, cap — izoh, cls — o'lcham (tall | big | wide | bo'sh), video: true — video
   gallery: [
     { src: "/assets/media/reel.mp4", poster: "/assets/media/reel-poster.webp", cap: "Jonli lavha", cls: "tall", video: true },
@@ -35,7 +37,9 @@ function nextGames(n){
   const diff=(CONFIG.gameDay-local.getUTCDay()+7)%7;
   let t=Date.UTC(local.getUTCFullYear(),local.getUTCMonth(),local.getUTCDate()+diff,hh,mm)-TZ;
   if(t+CONFIG.gameLength*3600e3<Date.now()) t+=7*864e5;
-  return Array.from({length:n},(_,i)=>t+i*7*864e5);
+  const skip=CONFIG.skip||[],out=[];
+  for(let i=0;out.length<n&&i<n+20;i++){const g=t+i*7*864e5,d=new Date(g+TZ),k=d.toISOString().slice(0,10);if(!skip.includes(k))out.push(g)}
+  return out;
 }
 function fmt(t){const d=new Date(t+TZ);return `${d.getUTCDate()}-${MONTHS[d.getUTCMonth()]}, ${DAYS[d.getUTCDay()]}`}
 
