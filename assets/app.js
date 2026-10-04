@@ -5,7 +5,6 @@ const CONFIG = {
   gameLength: 3,            // o'yin necha soat davom etadi
   venueShort: "Samarqand",  // qisqa joy nomi (restoran nomi)
   venueFull: "Manzil ro‘yxatdan o‘tgach yuboriladi", // to'liq manzil
-  capacity: "15–18 jamoa",
   price: "50 000",
   // Galereya: src — fayl, cap — izoh, cls — o'lcham (tall | big | wide | bo'sh), video: true — video
   gallery: [
@@ -25,7 +24,7 @@ const CONFIG = {
 };
 /* =================================================== */
 
-const MONTHS=["yanvar","fevral","mart","aprel","may","iyun","iyul","avgust","sentabr","oktabr","noyabr","dekabr"];
+const MONTHS=["yanvar","fevral","mart","aprel","may","iyun","iyul","avgust","sentyabr","oktyabr","noyabr","dekabr"];
 const DAYS=["yakshanba","dushanba","seshanba","chorshanba","payshanba","juma","shanba"];
 const TZ=5*3600e3; // Toshkent/Samarqand UTC+5
 const $=id=>document.getElementById(id);
@@ -44,8 +43,6 @@ const games=nextGames(3);
 $("nextDate").textContent=fmt(games[0]);
 $("nextTime").textContent=`soat ${CONFIG.gameTime} da`;
 $("venueShort").textContent=CONFIG.venueShort;
-$("capacity").textContent=CONFIG.capacity;
-$("capText").textContent=CONFIG.capacity.replace(" jamoa","");
 $("timeText").textContent=`soat ${CONFIG.gameTime}`;
 $("venueText").textContent=CONFIG.venueFull;
 $("priceText").textContent=CONFIG.price;
@@ -58,7 +55,7 @@ $("finalDate").textContent=`${fmt(games[0])}, soat ${CONFIG.gameTime}`;
 const dateSel=$("date");
 games.forEach((t,i)=>{const o=document.createElement("option");o.value=`${fmt(t)}, ${CONFIG.gameTime}`;o.textContent=fmt(t)+(i===0?" (eng yaqin)":"");dateSel.appendChild(o)});
 const pSel=$("players");
-for(let i=2;i<=8;i++){const o=document.createElement("option");o.value=i;o.textContent=`${i} kishi`;if(i===5)o.selected=true;pSel.appendChild(o)}
+for(let i=2;i<=10;i++){const o=document.createElement("option");o.value=i;o.textContent=`${i} kishi`;if(i===5)o.selected=true;pSel.appendChild(o)}
 
 function tick(){
   const now=Date.now(); let t=games[0]; let ms=t-now;
@@ -88,33 +85,6 @@ const lb=$("lb"),lbImg=$("lbImg");let lastFocus=null;
 function openLb(src,cap){lastFocus=document.activeElement;lbImg.src=src;lbImg.alt=cap;$("lbCap").textContent=cap;lb.hidden=false;document.body.style.overflow="hidden";$("lbX").focus()}
 function closeLb(){lb.hidden=true;document.body.style.overflow="";lbImg.src="";lastFocus&&lastFocus.focus()}
 $("lbX").onclick=closeLb;lb.addEventListener("click",e=>{if(e.target===lb)closeLb()});addEventListener("keydown",e=>{if(e.key==="Escape"&&!lb.hidden)closeLb()});
-
-/* mini quiz */
-const QS=[
-  {q:"Samarqanddagi Registon maydonidagi ansambl nechta madrasadan iborat?",o:["2 ta","3 ta","4 ta","5 ta"],a:1,e:"Ulug‘bek, Sherdor va Tillakori madrasalari."},
-  {q:"Quyosh tizimidagi eng katta sayyora qaysi?",o:["Saturn","Yer","Yupiter","Neptun"],a:2,e:"Yupiter qolgan barcha sayyoralardan kattaroq."},
-  {q:"Amir Temur qaysi shahar yaqinida tug‘ilgan?",o:["Buxoro","Xiva","Shahrisabz","Toshkent"],a:2,e:"Kesh (hozirgi Shahrisabz) yaqinidagi Xo‘ja Ilg‘or qishlog‘ida."}
-];
-let qi=0,score=0;
-function renderQ(){
-  const q=QS[qi]; $("qcount").textContent=`Savol ${qi+1} / ${QS.length}`; $("qtext").textContent=q.q; $("qfb").textContent=""; $("qnext").hidden=true;
-  const box=$("opts"); box.innerHTML="";
-  q.o.forEach((t,i)=>{const b=document.createElement("button");b.className="opt";b.textContent=t;b.onclick=()=>answer(i,b);box.appendChild(b)});
-}
-function answer(i,btn){
-  const q=QS[qi]; const all=[...$("opts").children]; all.forEach(b=>b.disabled=true);
-  all[q.a].classList.add("ok");
-  if(i===q.a){score++;$("qfb").textContent="To‘g‘ri! "+q.e}else{btn.classList.add("no");$("qfb").textContent="Afsus. "+q.e}
-  const nb=$("qnext"); nb.hidden=false;
-  if(qi===QS.length-1){nb.textContent="Natijani ko‘rish"}
-}
-$("qnext").onclick=()=>{
-  if(qi<QS.length-1){qi++;renderQ();return}
-  $("qcount").textContent="Natija"; $("opts").innerHTML="";
-  $("qtext").textContent=score===QS.length?`${score}/${QS.length} — siz tayyorsiz! Seshanba kuni jamoangiz bilan keling.`:`${score}/${QS.length} — yomon emas! Jamoada esa bundan ham kuchliroq bo‘lasiz.`;
-  $("qfb").innerHTML=""; const nb=$("qnext"); nb.textContent="Ro‘yxatdan o‘tish"; nb.onclick=()=>location.hash="#royxat";
-};
-renderQ();
 
 /* wheel */
 const wheel=$("wheel"); let rot=0, spinning=false;
@@ -209,8 +179,6 @@ addEventListener("scroll",()=>{if(ticking)return;ticking=true;requestAnimationFr
 function confetti(x,y,n=26){if(calm)return;const cols=["#FFB81C","#2E9E3F","#FF5A5F","#0B1033","#FFF6E3"];for(let i=0;i<n;i++){const c=document.createElement("i");c.className="confetti";const a=Math.random()*Math.PI*2,d=80+Math.random()*140;c.style.cssText=`left:${x}px;top:${y}px;background:${cols[i%cols.length]};--dx:${Math.cos(a)*d}px;--dy:${Math.sin(a)*d+120}px;--r:${Math.random()*720-360}deg`;document.body.appendChild(c);setTimeout(()=>c.remove(),1200)}}
 function centerOf(el){const r=el.getBoundingClientRect();return[r.left+r.width/2,r.top+r.height/2]}
 
-/* quiz: to'g'ri javobda konfetti */
-$("opts").addEventListener("click",e=>{const b=e.target.closest(".opt");if(b&&b.classList.contains("ok"))confetti(...centerOf(b))});
 
 /* baraban: birinchi aylantirishgacha tugma "chaqiradi", to'xtaganda konfetti */
 const spinBtn=$("spin");spinBtn.classList.add("idle");

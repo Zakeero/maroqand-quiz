@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Unbounded:wght@700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css?v=9">
+<link rel="stylesheet" href="/assets/style.css?v=10">
 </head>
 <body>
 
@@ -60,15 +60,13 @@
       <a class="btn btn-gold" href="#royxat" style="width:100%">Joy band qilish</a>
       <div class="meta" style="margin-top:18px">
         <span>Joy: <b id="venueShort"></b></span>
-        <span>Sig‘im: <b id="capacity"></b></span>
       </div>
     </aside>
   </div>
   <div class="wrap">
     <div class="stats">
       <div class="stat reveal"><b>20+</b><span>o‘tkazilgan o‘yin</span></div>
-      <div class="stat reveal"><b id="stTeams">15–18</b><span>jamoa sig‘adi</span></div>
-      <div class="stat reveal"><b>4–5</b><span>kishilik jamoalar</span></div>
+      <div class="stat reveal"><b>10 gacha</b><span>kishilik jamoalar</span></div>
       <div class="stat reveal"><b id="stPrice">50 000</b><span>so‘m / kishi</span></div>
     </div>
   </div>
@@ -80,7 +78,7 @@
     <h2>4 qadam — va siz o‘yindasiz</h2>
     <p class="lead">Aqlli bo‘lish shart emas. Kino ko‘rgan, musiqa tinglagan va do‘stlari bilan kulishni yaxshi ko‘radigan har kim uchun joy bor.</p>
     <div class="steps">
-      <div class="step reveal"><h3>Jamoa yig‘ing</h3><p>4–5 kishilik jamoa tuzing: do‘stlar, hamkasblar yoki kursdoshlar. Jamoaga qiziqarli nom o‘ylab toping.</p></div>
+      <div class="step reveal"><h3>Jamoa yig‘ing</h3><p>10 kishigacha bo‘lgan jamoa tuzing: do‘stlar, hamkasblar yoki kursdoshlar. Jamoaga qiziqarli nom o‘ylab toping.</p></div>
       <div class="step reveal"><h3>Joy band qiling</h3><p>Saytdagi forma orqali 1 daqiqada ro‘yxatdan o‘ting. Biz siz bilan bog‘lanib, joyni tasdiqlaymiz.</p></div>
       <div class="step reveal"><h3>Keling va o‘ynang</h3><p>Seshanba kuni kechqurun bir necha raund: savollarga jamoa bo‘lib javob topasiz, ballar jadvalda yuritiladi.</p></div>
       <div class="step reveal"><h3>Sovrinlarni oling</h3><p>G‘oliblar, “Ekvator”, “Zato shohsupadami” va baraban orqali tanlanadigan 10 nafar omadli ishtirokchi.</p></div>
@@ -104,6 +102,9 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h3a2 2 0 1 1 4 0h3v3a2 2 0 1 1 0 4v3h-3a2 2 0 1 0-4 0H4v-3a2 2 0 1 0 0-4z"/><path d="M17 4h3v3"/></svg>
         <span class="tag int">Intellektual</span><h3>Rebuslar</h3><p>Harflar, rasmlar va belgilardan yashirin so‘zni yeching.</p></div>
       <div class="round emo reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/><path d="M5.5 12l1.5 1.5 3-3"/><path d="M14.5 10.5l3 3M17.5 10.5l-3 3"/></svg>
+        <span class="tag emo">Emotsional</span><h3>50/50</h3><p>Ha yoki Yo‘q — ikki javobdan birini tanlang. Sezgi va tavakkal raundi.</p></div>
+      <div class="round emo reveal">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18M7 6l2 4M12 6l2 4M17 6l2 4"/></svg>
         <span class="tag emo">Emotsional</span><h3>Kino raundi</h3><p>Sevimli filmlaringizni kadr va sahnalardan taniy olasizmi?</p></div>
       <div class="round emo reveal">
@@ -111,20 +112,6 @@
         <span class="tag emo">Emotsional</span><h3>Musiqa raundi</h3><p>Bir necha soniyalik parchadan qo‘shiqni toping va birga kuylang.</p></div>
     </div>
 
-    <div class="try reveal" id="sinab">
-      <div>
-        <span class="eyebrow" style="color:var(--gold)">Sinab ko‘ring</span>
-        <h3>Yecha olasizmi?</h3>
-        <p class="sub">O‘yindagi kabi 3 ta savol. To‘g‘ri topsangiz — seshanba kuni sizni kutamiz.</p>
-      </div>
-      <div>
-        <div class="qcount" id="qcount"></div>
-        <div class="qtext" id="qtext"></div>
-        <div class="opts" id="opts"></div>
-        <div class="qfb" id="qfb" aria-live="polite"></div>
-        <button class="btn btn-gold qnext" id="qnext" hidden>Keyingi savol</button>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -189,12 +176,12 @@
     <div class="reg-info">
       <span class="eyebrow">Ro‘yxatdan o‘tish</span>
       <h2>Jamoangiz uchun joy band qiling</h2>
-      <p class="lead">Zal <span id="capText">15–18</span> jamoaga mo‘ljallangan — joylar tugashidan oldin ulguring.</p>
+      <p class="lead">Joylar soni cheklangan — jamoangiz uchun oldinroq joy band qiling.</p>
       <div class="price"><span id="priceText">50 000</span> <small>so‘m / kishi boshiga</small></div>
       <ul>
         <li>📅 <span>Har <b>seshanba</b>, <b id="timeText"></b></span></li>
         <li>📍 <span id="venueText"></span></li>
-        <li>👥 <span>Jamoada odatda <b>4–5 kishi</b></span></li>
+        <li>👥 <span>Jamoada <b>10 kishigacha</b></span></li>
         <li>✈️ <span>E’lonlar: <a href="https://t.me/maroqAndquiz" target="_blank" rel="noopener">t.me/maroqAndquiz</a></span></li>
       </ul>
     </div>
@@ -259,7 +246,7 @@
     <h2>Savollaringiz bormi?</h2>
     <div class="faq">
       <details><summary>Juda bilimdon bo‘lishim shartmi?</summary><p>Yo‘q. Savollar turli mavzularda: kino, musiqa, rasmlar va rebuslar ham bor. Jamoada har kim o‘z kuchli tomonini topadi — asosiysi, yaxshi kayfiyat.</p></details>
-      <details><summary>Jamoada necha kishi bo‘ladi?</summary><p>Odatda 4–5 kishi. Kamroq yoki ko‘proq bo‘lsangiz, ro‘yxatdan o‘tishda sonini ko‘rsating — tashkilotchilar siz bilan kelishib oladi.</p></details>
+      <details><summary>Jamoada necha kishi bo‘ladi?</summary><p>Jamoada 10 kishigacha bo‘lishi mumkin. Ro‘yxatdan o‘tishda ishtirokchilar sonini ko‘rsating.</p></details>
       <details><summary>Ishtirok narxi qancha?</summary><p id="faqPrice">Kishi boshiga 50 000 so‘m.</p></details>
       <details><summary>O‘yin qayerda va qachon bo‘ladi?</summary><p id="faqWhere"></p></details>
       <details><summary>Jamoam yo‘q bo‘lsa-chi?</summary><p>Telegram yoki Instagram Direct orqali bizga yozing — vaziyatingizga qarab variantini birga topamiz.</p></details>
@@ -295,6 +282,6 @@
 
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Rasmni kattalashtirib ko‘rish"><button class="lb-x" id="lbX" aria-label="Yopish">&times;</button><img id="lbImg" alt=""><p id="lbCap"></p></div>
 
-<script src="/assets/app.js?v=6"></script>
+<script src="/assets/app.js?v=10"></script>
 </body>
 </html>
