@@ -114,6 +114,18 @@ phone.addEventListener("input",()=>{
 phone.addEventListener("focus",()=>{if(!phone.value)phone.value="+998 "});
 phone.addEventListener("blur",()=>{if(phone.value.trim()==="+998")phone.value=""});
 
+/* Telegram Mini App: bot ichida ochilganda */
+const TG=window.Telegram&&window.Telegram.WebApp, inTG=!!(TG&&TG.initData);
+if(inTG){
+  TG.ready(); TG.expand();
+  document.documentElement.classList.add("in-tg");
+  const u=(TG.initDataUnsafe&&TG.initDataUnsafe.user)||{};
+  const cap=$("captain"), tgf=$("telegram");
+  if(cap&&!cap.value)cap.value=[u.first_name,u.last_name].filter(Boolean).join(" ");
+  if(tgf&&!tgf.value&&u.username)tgf.value="@"+u.username;
+  document.addEventListener("click",e=>{const a=e.target.closest("a[href^='https://t.me/']");if(a){e.preventDefault();TG.openTelegramLink(a.href)}});
+}
+
 /* form */
 const form=$("regForm");
 function setErr(id,msg){const f=$(id);f.classList.add("err");f.querySelector(".emsg").textContent=msg}
@@ -126,6 +138,7 @@ form.addEventListener("submit",async e=>{
   if(!fd.captain.trim()){setErr("f-captain","Ismingizni kiriting");bad=true}
   if(fd.phone.replace(/\D/g,"").length!==12){setErr("f-phone","Raqamni to‘liq kiriting: +998 XX XXX XX XX");bad=true}
   if(bad){form.querySelector(".err input, .err select")?.focus();return}
+  if(inTG){fd.tg_init=TG.initData; if(!fd.source)fd.source="Telegram bot"}
   const btn=$("submitBtn"); btn.disabled=true; btn.textContent="Yuborilmoqda…";
   try{
     const r=await fetch("/api/register",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(fd)});
