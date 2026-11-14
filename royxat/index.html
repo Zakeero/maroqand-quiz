@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ro‘yxatdan o‘tish — Maroqand Quiz</title>
+<meta name="description" content="Maroqand Quiz o‘yiniga jamoangizni 1 daqiqada ro‘yxatdan o‘tkazing. Har seshanba 19:00, Samarqand.">
+<meta property="og:title" content="Maroqand Quiz — ro‘yxatdan o‘tish">
+<meta property="og:description" content="Jamoangizni 1 daqiqada yozdiring. Har seshanba 19:00.">
+<meta property="og:image" content="https://maroqandquiz.uz/assets/og.jpg">
+<meta name="theme-color" content="#0B1033">
+<link rel="icon" href="/assets/logo.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&family=Unbounded:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B1033;--card:#1C2458;--gold:#FFB81C;--gold-ink:#A36B00;--coral:#FF5A5F;--coral-ink:#D1353B;--cream:#FFF6E3;--mist:#5B6189;--field:#DDD8CC;--head:"Unbounded",system-ui,sans-serif;--body:"Manrope",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+html,body{min-height:100%}
+body::before{content:"";position:fixed;inset:0;background:url(/assets/girih.svg) center/260px;opacity:.07;pointer-events:none}
+.top,.card{position:relative}
+body{background:var(--navy);position:relative;color:var(--navy);font:500 16px/1.45 var(--body);display:flex;flex-direction:column;min-height:100dvh;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+.top{color:var(--cream);padding:18px 18px 16px;max-width:480px;width:100%;margin:0 auto}
+.brand{display:flex;align-items:center;gap:10px;font:700 17px var(--head);text-decoration:none;color:var(--cream)}
+.brand img{width:38px;height:38px;border-radius:50%;box-shadow:0 0 0 2px var(--gold)}
+h1{font:900 clamp(22px,6.4vw,28px)/1.15 var(--head);margin:14px 0 6px}
+h1 span{color:var(--gold)}
+.meta{display:flex;flex-wrap:wrap;gap:6px}
+.meta b{font-size:13px;font-weight:700;padding:5px 10px;border-radius:999px;background:rgba(255,246,227,.1);color:var(--cream)}
+.meta b.g{background:var(--gold);color:var(--navy)}
+.card{flex:1;background:#fff;border-radius:24px 24px 0 0;padding:20px 18px 18px;max-width:480px;width:100%;margin:0 auto}
+@media(min-width:520px){.card{flex:0;border-radius:24px;margin-bottom:24px}}
+form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field{display:grid;gap:5px}
+.field.full{grid-column:1/-1}
+label{font-weight:700;font-size:13px}
+input,select{width:100%;min-height:48px;border-radius:12px;border:1.5px solid var(--field);background:#fff;color:var(--navy);font:600 16px var(--body);padding:10px 12px;appearance:none;-webkit-appearance:none}
+select{background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%230B1033' stroke-width='2' fill='none'/%3E%3C/svg%3E") right 12px center no-repeat;padding-right:30px}
+input:focus,select:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(255,184,28,.45)}
+.field.err input{border-color:var(--coral)}
+.emsg{color:var(--coral-ink);font-size:12px}
+.emsg:empty{display:none}
+.check{display:flex;align-items:center;gap:10px;font-weight:600;font-size:14px;cursor:pointer}
+.check input{width:20px;min-height:20px;height:20px;padding:0;border-radius:6px;accent-color:var(--gold);appearance:auto;-webkit-appearance:checkbox}
+.hp{position:absolute;left:-9999px;opacity:0;height:0;width:0;min-height:0;padding:0;border:0}
+.btn{grid-column:1/-1;display:flex;align-items:center;justify-content:center;min-height:54px;border-radius:999px;border:0;background:var(--gold);color:var(--navy);font:700 17px var(--body);cursor:pointer;text-decoration:none;transition:transform .15s}
+.btn:active{transform:scale(.97)}
+.btn:disabled{opacity:.6}
+.btn.ghost{background:transparent;box-shadow:inset 0 0 0 1.5px var(--field)}
+.note{grid-column:1/-1;font-size:12px;color:var(--mist);text-align:center}
+.form-err{grid-column:1/-1;background:#FFF0F0;color:var(--coral-ink);border-radius:12px;padding:10px 12px;font-size:14px}
+.form-err a{color:inherit;font-weight:700}
+.done{text-align:center;display:grid;gap:12px;padding:12px 0}
+.done .ic{width:64px;height:64px;margin:0 auto;border-radius:50%;background:var(--gold);display:grid;place-items:center;font:900 30px var(--head)}
+.done h2{font:900 22px var(--head)}
+.done p{color:var(--mist)}
+.done p b{color:var(--navy)}
+.in-tg .site-link{display:none}
+.site-link{grid-column:1/-1;text-align:center;font-size:13px;color:var(--mist)}
+.site-link a{color:var(--gold-ink);font-weight:700}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="/"><img src="/assets/logo.webp" alt="" width="38" height="38">Maroqand Quiz</a>
+  <h1>Jamoangizni <span>1 daqiqada</span> yozdiring</h1>
+  <div class="meta"><b class="g" id="nextBadge">Seshanba</b><b>19:00</b><b>Samarqand</b></div>
+</header>
+
+<main class="card" id="card">
+  <form id="regForm" novalidate>
+    <div class="field full" id="f-team">
+      <label for="team">Jamoa nomi</label>
+      <input id="team" name="team" maxlength="60" placeholder="Masalan: Registon ruhlari" autocomplete="off">
+      <div class="emsg"></div>
+    </div>
+    <div class="field full" id="f-captain">
+      <label for="captain">Sardor ismi</label>
+      <input id="captain" name="captain" maxlength="60" placeholder="Ismingiz" autocomplete="name">
+      <div class="emsg"></div>
+    </div>
+    <div class="field full" id="f-phone">
+      <label for="phone">Telefon raqam</label>
+      <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="+998 90 123 45 67" autocomplete="tel">
+      <div class="emsg"></div>
+    </div>
+    <div class="field">
+      <label for="players">Necha kishi</label>
+      <select id="players" name="players"></select>
+    </div>
+    <div class="field">
+      <label for="date">O‘yin sanasi</label>
+      <select id="date" name="date"></select>
+    </div>
+    <div class="field full">
+      <label class="check"><input type="checkbox" name="first" value="yes"> Birinchi marta qatnashyapmiz</label>
+    </div>
+    <input type="hidden" name="telegram" id="telegram">
+    <input type="hidden" name="source" id="source">
+    <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="form-err" id="formErr" hidden></div>
+    <button class="btn" type="submit" id="submitBtn">Joyni band qilish</button>
+    <p class="note">Tashkilotchilarimiz siz bilan bog‘lanib, joyni tasdiqlaydi.</p>
+    <p class="site-link">O‘yin haqida batafsil: <a href="/">maroqandquiz.uz</a></p>
+  </form>
+</main>
+
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script>
+/* O'yin sozlamalari — assets/app.js dagi CONFIG bilan bir xil bo'lsin */
+const CFG={gameDay:2,gameTime:"19:00",gameLength:3,skip:["2026-10-06"]};
+const MONTHS=["yanvar","fevral","mart","aprel","may","iyun","iyul","avgust","sentyabr","oktyabr","noyabr","dekabr"];
+const DAYS=["yakshanba","dushanba","seshanba","chorshanba","payshanba","juma","shanba"];
+const TZ=5*3600e3, $=id=>document.getElementById(id);
+const CHANNEL="https://t.me/maroqAndquiz";
+
+function nextGames(n){
+  const [hh,mm]=CFG.gameTime.split(":").map(Number);
+  const local=new Date(Date.now()+TZ);
+  const diff=(CFG.gameDay-local.getUTCDay()+7)%7;
+  let t=Date.UTC(local.getUTCFullYear(),local.getUTCMonth(),local.getUTCDate()+diff,hh,mm)-TZ;
+  if(t+CFG.gameLength*3600e3<Date.now()) t+=7*864e5;
+  const out=[];
+  for(let i=0;out.length<n&&i<n+20;i++){const g=t+i*7*864e5,k=new Date(g+TZ).toISOString().slice(0,10);if(!CFG.skip.includes(k))out.push(g)}
+  return out;
+}
+function fmt(t){const d=new Date(t+TZ);return `${d.getUTCDate()}-${MONTHS[d.getUTCMonth()]}, ${DAYS[d.getUTCDay()]}`}
+const short=t=>{const d=new Date(t+TZ);return `${d.getUTCDate()}-${MONTHS[d.getUTCMonth()]}`};
+
+const games=nextGames(3);
+$("nextBadge").textContent=`Keyingi o‘yin: ${short(games[0])}`;
+games.forEach((t,i)=>{const o=document.createElement("option");o.value=`${fmt(t)}, ${CFG.gameTime}`;o.textContent=short(t);$("date").appendChild(o)});
+for(let i=2;i<=10;i++){const o=document.createElement("option");o.value=i;o.textContent=`${i} kishi`;if(i===5)o.selected=true;$("players").appendChild(o)}
+
+/* Manba: bot ichida — "Telegram bot", aks holda ?src= yoki "Landing sahifa" */
+const qs=new URLSearchParams(location.search);
+$("source").value=qs.get("src")||"Landing sahifa";
+
+/* Telegram Mini App */
+const TG=window.Telegram&&window.Telegram.WebApp, inTG=!!(TG&&TG.initData);
+if(inTG){
+  TG.ready(); TG.expand();
+  try{TG.setHeaderColor("#0B1033");TG.setBackgroundColor("#0B1033")}catch(e){}
+  document.documentElement.classList.add("in-tg");
+  const u=(TG.initDataUnsafe&&TG.initDataUnsafe.user)||{};
+  $("captain").value=[u.first_name,u.last_name].filter(Boolean).join(" ");
+  if(u.username)$("telegram").value="@"+u.username;
+  $("source").value="Telegram bot";
+}
+function openLink(href){if(inTG&&href.startsWith("https://t.me/"))TG.openTelegramLink(href);else window.open(href,"_blank","noopener")}
+
+/* telefon maskasi */
+const phone=$("phone");
+phone.addEventListener("input",()=>{
+  const v=phone.value.trim();let d;if(v.startsWith("+998")){d=v.slice(4).replace(/\D/g,"")}else{d=v.replace(/\D/g,"");if(d.length>9&&d.startsWith("998"))d=d.slice(3)}d=d.slice(0,9);
+  let out="+998";if(d.length)out+=" "+d.slice(0,2);if(d.length>2)out+=" "+d.slice(2,5);if(d.length>5)out+=" "+d.slice(5,7);if(d.length>7)out+=" "+d.slice(7,9);
+  phone.value=d.length?out:"";clearErr("f-phone");
+});
+phone.addEventListener("focus",()=>{if(!phone.value)phone.value="+998 "});
+phone.addEventListener("blur",()=>{if(phone.value.trim()==="+998")phone.value=""});
+
+const form=$("regForm");
+function setErr(id,msg){const f=$(id);f.classList.add("err");f.querySelector(".emsg").textContent=msg}
+function clearErr(id){const f=$(id);f.classList.remove("err");f.querySelector(".emsg").textContent=""}
+["team","captain"].forEach(k=>$(k).addEventListener("input",()=>clearErr("f-"+k)));
+const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");
+
+form.addEventListener("submit",async e=>{
+  e.preventDefault();$("formErr").hidden=true;
+  const fd=Object.fromEntries(new FormData(form));let bad=false;
+  if(!fd.team.trim()){setErr("f-team","Jamoa nomini kiriting");bad=true}
+  if(!fd.captain.trim()){setErr("f-captain","Ismingizni kiriting");bad=true}
+  if(fd.phone.replace(/\D/g,"").length!==12){setErr("f-phone","Raqamni to‘liq kiriting: +998 XX XXX XX XX");bad=true}
+  if(bad){form.querySelector(".err input")?.focus();if(inTG)TG.HapticFeedback?.notificationOccurred("error");return}
+  if(inTG)fd.tg_init=TG.initData;
+  const btn=$("submitBtn");btn.disabled=true;btn.textContent="Yuborilmoqda…";
+  try{
+    const r=await fetch("/api/register",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(fd)});
+    const j=await r.json().catch(()=>({}));
+    if(!(r.ok&&j.ok))throw new Error(j.error||"err");
+    if(inTG)TG.HapticFeedback?.notificationOccurred("success");
+    $("card").innerHTML=`<div class="done"><div class="ic">✓</div><h2>Ariza qabul qilindi!</h2>
+      <p><b>${esc(fd.team)}</b> jamoasi ${esc(fd.date)} o‘yiniga yozildi. Tez orada siz bilan bog‘lanamiz.</p>
+      <a class="btn" href="${CHANNEL}" id="chBtn">Telegram kanalga qo‘shilish</a>
+      ${inTG?'<button class="btn ghost" type="button" id="closeBtn">Yopish</button>':'<a class="btn ghost" href="/">Saytga o‘tish</a>'}</div>`;
+    $("chBtn").addEventListener("click",ev=>{ev.preventDefault();openLink(CHANNEL)});
+    $("closeBtn")?.addEventListener("click",()=>TG.close());
+  }catch(err){
+    $("formErr").innerHTML=`Ariza yuborilmadi. Qayta urinib ko‘ring yoki bizga yozing: <a href="${CHANNEL}" id="errLink">Telegram</a>`;
+    $("errLink").addEventListener("click",ev=>{ev.preventDefault();openLink(CHANNEL)});
+    $("formErr").hidden=false;btn.disabled=false;btn.textContent="Joyni band qilish";
+  }
+});
+</script>
+</body>
+</html>

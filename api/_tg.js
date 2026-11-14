@@ -2,7 +2,7 @@
 import crypto from "node:crypto";
 
 export const SITE = "https://maroqandquiz.uz";
-export const FORM_URL = `${SITE}/#royxat`;
+export const FORM_URL = `${SITE}/royxat`;
 export const CHANNEL = "https://t.me/maroqAndquiz";
 
 export async function tg(method, payload) {
